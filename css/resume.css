@@ -54,6 +54,10 @@ p.lead {
   font-weight: 400;
 }
 
+p {
+  color: var(--dark);
+}
+
 li {
   color: var(--dark);
 }
