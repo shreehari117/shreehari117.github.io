@@ -54,6 +54,10 @@ p.lead {
   font-weight: 400;
 }
 
+li {
+  color: var(--dark);
+}
+
 .subheading {
   text-transform: none;
   font-weight: 500;
