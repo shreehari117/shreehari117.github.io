@@ -3848,7 +3848,8 @@ input, select, textarea {
   background: -webkit-radial-gradient(circle at 70% 35%, white, #66d63e 30%, #40a31d 50%);
   background: -o-radial-gradient(circle at 70% 35%, white, #66d63e 30%, #40a31d 50%);
   background: -ms-radial-gradient(circle at 70% 35%, white, #66d63e 30%, #40a31d 50%);
-  background: radial-gradient(circle at 70% 35%, white, #66d63e 30%, #40a31d 50%);
+/*   background: radial-gradient(circle at 70% 35%, white, #66d63e 30%, #40a31d 50%); */
+  background: radial-gradient(circle at 70% 35%, white, #bbbdbf 30%, #919294 50%);
   border-radius: 50%;
   position: absolute;
   bottom: -10px;
