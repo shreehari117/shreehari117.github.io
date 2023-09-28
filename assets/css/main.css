@@ -3131,7 +3131,7 @@ input, select, textarea {
 			}
 
 				#header.alt {
-					padding: 6em 4em 3em 4em ;
+					padding: 4.5em 4em 0.5em 4em ;
 				}
 
 		}
@@ -3792,7 +3792,9 @@ input, select, textarea {
 
 .base {
   width: 500px;
-  border-top: 5px solid #96b1ad;
+  border-top: 5px solid #header.alt {
+    padding: 4.5em 4em 0.5em 4em;
+};
   margin: auto;
   text-align: center;
   position: relative;
