@@ -153,7 +153,8 @@ li {
 section.resume-section {
   padding-top: 5rem !important;
   padding-bottom: 5rem !important;
-  max-width: 75rem;
+  padding-left: 25rem;
+  max-width: 60rem;
 }
 
 section.resume-section .resume-item .resume-date {
