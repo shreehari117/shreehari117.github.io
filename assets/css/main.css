@@ -3221,7 +3221,8 @@ input, select, textarea {
 		width: 64em;
 		max-width: calc(100% - 4em);
 		padding: 1em;
-		background-color: #f7f7f7;
+/* 		background-color: #f7f7f7; */
+		background-color: #e0d6ca
 		border-top-left-radius: 0.25em;
 		border-top-right-radius: 0.25em;
 		cursor: default;
@@ -3306,7 +3307,8 @@ input, select, textarea {
 			top: 0;
 			padding: 0.5em 1em;
 /* 			background-color: rgba(247, 247, 247, 0.95); */
-			background-color: #d7dee2
+/* 			background-color: #d7dee2 */
+			background-color: #e0d6ca
 			border-top-left-radius: 0;
 			border-top-right-radius: 0;
 			z-index: 10000;
