@@ -3889,3 +3889,10 @@ input, select, textarea {
     filter: blur(20px);
   }
 }
+.exp_section_box {
+  background-color: #f0e7e6;
+  width: 300px;
+  border: 15px solid #66d63e;
+  padding: 50px;
+  margin: 20px;
+}
