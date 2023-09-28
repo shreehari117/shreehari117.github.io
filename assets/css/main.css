@@ -3131,7 +3131,7 @@ input, select, textarea {
 			}
 
 				#header.alt {
-					padding: 4.5em 4em 0.5em 4em ;
+					padding: 2.5em 4em 0.5em 4em ;
 				}
 
 		}
@@ -3798,7 +3798,7 @@ input, select, textarea {
   margin: auto;
   text-align: center;
   position: relative;
-  padding: 0 0 20px;
+  padding: 0 0 10px;
 }
 
 .holder {
