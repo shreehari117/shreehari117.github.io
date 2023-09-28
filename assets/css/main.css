@@ -3305,7 +3305,8 @@ input, select, textarea {
 			position: fixed;
 			top: 0;
 			padding: 0.5em 1em;
-			background-color: rgba(247, 247, 247, 0.95);
+/* 			background-color: rgba(247, 247, 247, 0.95); */
+			background-color: #d7dee2
 			border-top-left-radius: 0;
 			border-top-right-radius: 0;
 			z-index: 10000;
