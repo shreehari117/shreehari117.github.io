@@ -3792,13 +3792,12 @@ input, select, textarea {
 
 .base {
   width: 500px;
-  border-top: 5px solid #header.alt {
-    padding: 4.5em 4em 0.5em 4em;
+  border-top: 5px solid #92aeb0
 };
   margin: auto;
   text-align: center;
   position: relative;
-  padding: 0 0 30px;
+  padding: 0 0 20px;
 }
 
 .holder {
