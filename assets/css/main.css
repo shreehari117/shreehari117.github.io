@@ -3792,7 +3792,7 @@ input, select, textarea {
 
 .base {
   width: 500px;
-  border-top: 5px solid gray;
+  border-top: 5px solid #96b1ad;
   margin: auto;
   text-align: center;
   position: relative;
