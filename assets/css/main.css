@@ -3891,7 +3891,7 @@ input, select, textarea {
 }
 .exp_section_box {
 background-color: #f0e7e6;
-width: calc(105%);
+width: calc(100%);
 /* border: 15px solid #66d63e; */
 padding: 20px;
 margin: 20px;
