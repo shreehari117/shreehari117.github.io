@@ -3890,9 +3890,11 @@ input, select, textarea {
   }
 }
 .exp_section_box {
-  background-color: #f0e7e6;
-  width: 300px;
-  border: 15px solid #66d63e;
-  padding: 50px;
-  margin: 20px;
+background-color: #f0e7e6;
+width: 300px;
+/* border: 15px solid #66d63e; */
+padding: 20px;
+margin: 20px;
+height: 275px;
+border-radius: 25px;
 }
