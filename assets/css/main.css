@@ -3891,10 +3891,10 @@ input, select, textarea {
 }
 .exp_section_box {
 background-color: #f0e7e6;
-width: 300px;
+width: calc(105%);
 /* border: 15px solid #66d63e; */
 padding: 20px;
 margin: 20px;
-height: 275px;
+height: calc(100%);
 border-radius: 25px;
 }
