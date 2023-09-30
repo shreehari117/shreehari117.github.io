@@ -3918,7 +3918,7 @@ border-radius: 25px;
   transform: translate(-50%, -50%);
   transform-style: preserve-3d;
 }
-.image img_research {
+.image_research img {
   transform: rotateX(70deg) rotateZ(-60deg) translate3d(-120px, 0px, 70px);
   box-shadow: -80px 60px 15px 5px rgba(0,0,0,0.4);
   transition: all .4s;
