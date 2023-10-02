@@ -3927,4 +3927,10 @@ border-radius: 25px;
 
 ul.list {
   list-style-type: square;
+  display: inline-block;
+  text-align: left;
+}
+
+.list_container {
+  text-align: right;
 }
