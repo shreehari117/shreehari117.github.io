@@ -3924,3 +3924,7 @@ border-radius: 25px;
   float:left;
   width:70%;
 }
+
+ul.list {
+  list-style-type: square;
+}
