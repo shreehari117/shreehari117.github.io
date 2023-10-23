@@ -3764,6 +3764,32 @@ input, select, textarea {
 
 		}
 
+/* Image gallery in the Research section */
+
+	.res_gall {
+		display: grid;
+	  	padding: 2rem;
+	  	grid-template-columns: 300px 1fr;
+	  	gap: 1rem;
+	   	align-items: center;
+	  	max-width: 800px;
+	  	margin: 0 auto;
+	  	font: 500 100%/1.5;
+		cursor: default;
+	}
+
+
+		@media screen and (max-width: 736px) {
+
+			.res_gall {
+				display: block;
+				width: 20em;
+				max-width: 100%;
+				margin: 0 auto 2em auto;
+			}
+
+		}
+
 /* Wrapper */
 
 	#wrapper {
