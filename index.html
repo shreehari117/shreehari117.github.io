@@ -253,10 +253,127 @@
                         </div>
                     </div>
                 </div>
-                <!-- Add more publication cards here -->
+                <div class="publication-card">
+                    <div class="publication-year">2024</div>
+                    <div class="publication-content">
+                        <h3>Quantum option pricing via the Karhunen-Lo\{e} ve expansion</h3>
+                        <p class="authors">Anupam Prakash, Yue Sun†, Shouvanik Chakrabarti, Charlie Che, Aditi Dandapani, Dylan Herman, Niraj Kumar, Shree Hari Sureshbabu, Ben Wood, Iordanis Kerenidis, and Marco Pistoia</p>
+                        <p class="journal">arxiv</p>
+                        <div class="publication-links">
+                            <a href="https://arxiv.org/pdf/2402.10132" class="pub-link">Link</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <section id="contact" style="min-height: 50vh; padding: 6rem 2rem 2rem 2rem; background: var(--light-bg);">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <h2 style="color: var(--primary-color); margin-bottom: 2rem; font-size: 2rem;">Contact</h2>
+            <div class="contact-card">
+                <div class="contact-info">
+                    <p>Email: shreehari.sureshbabu@jpmchase.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Publications Styles */
+        .publications-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .publication-card {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 2rem;
+            padding: 2rem;
+            background: var(--light-bg);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .publication-card:hover {
+            transform: translateX(10px);
+        }
+
+        .publication-year {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .publication-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .authors {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .journal {
+            font-style: italic;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .publication-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .pub-link {
+            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+        }
+
+        .pub-link:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Contact Styles */
+        .contact-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info {
+            font-size: 1.2rem;
+            line-height: 2;
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .publication-card {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .publication-year {
+                font-size: 1.2rem;
+            }
+
+            .contact-card {
+                padding: 2rem;
+            }
+        }
+    </style>
     
 </body>
 </html>
