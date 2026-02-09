@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shree Hari Sureshbabu - Researcher in artificial intelligence, quantum computing, and computational methods. Senior Applied Research Associate at JPMorgan Chase.">
+    <meta name="keywords" content="AI researcher, machine learning, quantum computing, quantum machine learning, optimization, computational finance, neural networks, Monte Carlo, QAOA">
+    <title>Shree Hari Sureshbabu | Research Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2c5282;
+            --accent-color: #5a67d8;
+            --text-dark: #1a202c;
+            --text-medium: #4a5568;
+            --text-light: #718096;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --border-color: #e2e8f0;
+            --border-subtle: #edf2f7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--bg-primary);
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-subtle);
+            z-index: 1000;
+            padding: 1.25rem 0;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-medium);
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+            letter-spacing: 0.01em;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            background: var(--bg-primary);
+            padding: 8rem 2.5rem 6rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .hero-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            border: 4px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(26, 54, 93, 0.15);
+            overflow: hidden;
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-text {
+            padding-top: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            line-height: 1.15;
+            color: var(--primary-color);
+            letter-spacing: -0.03em;
+        }
+
+        .hero .subtitle {
+            font-size: 1.35rem;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            color: var(--text-medium);
+            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero .tagline {
+            font-size: 1.05rem;
+            margin-bottom: 0;
+            color: var(--text-light);
+            line-height: 1.75;
+            max-width: 700px;
+        }
+
+        .hero-highlights {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            color: var(--text-medium);
+            font-size: 0.95rem;
+        }
+
+        .highlight-item i {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+        }
+
+        .cta-buttons {
+            display: none;
+        }
+
+        /* Stats Bar - Hidden for academic elegance */
+        .stats-bar {
+            display: none;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.75rem;
+            margin-bottom: 1.25rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .section-header .subtitle {
+            color: var(--text-light);
+            font-size: 1.15rem;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        .about-text {
+            font-size: 1.075rem;
+            line-height: 1.85;
+            color: var(--text-dark);
+            font-weight: 400;
+        }
+
+        .about-text p {
+            margin-bottom: 1.75rem;
+        }
+
+        .highlight-box {
+            background: var(--bg-secondary);
+            border-left: 3px solid var(--primary-color);
+            padding: 2rem 2.25rem;
+            margin: 2.5rem 0;
+            border-radius: 0;
+        }
+
+        .highlight-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .highlight-box p {
+            line-height: 1.8;
+            color: var(--text-medium);
+        }
+
+        /* Elegant bullets for About section */
+        .highlight-box p strong::before {
+            content: "◆";
+            color: var(--primary-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1.5em;
+            margin-left: -1.5em;
+            font-size: 0.8em;
+            vertical-align: middle;
+        }
+
+        /* Research Areas Section */
+        .research-areas {
+            margin-top: 2.5rem;
+        }
+
+        .research-area {
+            margin-bottom: 5rem;
+            padding-bottom: 4rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .research-area:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .area-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1.25rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .area-description {
+            font-size: 1.075rem;
+            line-height: 1.85;
+            color: var(--text-medium);
+            margin-bottom: 2.5rem;
+            max-width: 900px;
+        }
+
+        .subtopics {
+            display: grid;
+            gap: 2.5rem;
+        }
+
+        .subtopic {
+            padding-left: 2rem;
+            border-left: 2px solid var(--border-color);
+            transition: border-color 0.2s ease;
+        }
+
+        .subtopic:hover {
+            border-left-color: var(--primary-color);
+        }
+
+        .subtopic h4 {
+            font-size: 1.35rem;
+            color: var(--text-dark);
+            margin-bottom: 0.85rem;
+            font-weight: 600;
+            font-family: 'Crimson Pro', serif;
+        }
+
+        .subtopic-desc {
+            font-size: 1rem;
+            line-height: 1.75;
+            color: var(--text-medium);
+            margin-bottom: 1.25rem;
+        }
+
+        .representative-pubs {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .representative-pubs a {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            padding: 0.85rem 1.25rem;
+            background: var(--bg-secondary);
+            border-left: 3px solid transparent;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: all 0.2s ease;
+            font-size: 0.975rem;
+            line-height: 1.5;
+        }
+
+        .representative-pubs a:hover {
+            border-left-color: var(--primary-color);
+            background: var(--bg-primary);
+            color: var(--primary-color);
+        }
+
+        .representative-pubs a.placeholder-pub {
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        .pub-venue {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .representative-pubs a:hover .pub-venue {
+            color: var(--secondary-color);
+        }
+
+        /* Research Focus */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .research-card {
+            background: var(--bg-secondary);
+            color: var(--text-dark);
+            padding: 2.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0;
+            transition: transform 0.2s ease;
+        }
+
+        .research-card:hover {
+            border-color: var(--primary-color);
+        }
+
+        .research-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .research-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .research-card li {
+            padding: 0.65rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+
+        .research-card li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Section-specific elegant bullets */
+        
+        /* Physics-Informed Algorithms - Brain/Circuit bullets */
+        .research-area:nth-child(1) .subtopic li:before {
+            content: "⚡";
+            color: #2563eb;
+            font-size: 1.1em;
+        }
+
+        /* Quantum Optimization - Geometric bullets */
+        .research-area:nth-child(2) .subtopic li:before {
+            content: "◈";
+            color: #7c3aed;
+            font-size: 1em;
+        }
+
+        /* Quantum ML - Atom bullets */
+        .research-area:nth-child(3) .subtopic li:before {
+            content: "⬡";
+            color: #0891b2;
+            font-size: 1em;
+        }
+
+        /* Research area subtopics with list formatting */
+        .subtopic ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1rem;
+        }
+
+        .subtopic li {
+            padding: 0.5rem 0;
+            padding-left: 1.75rem;
+            position: relative;
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+
+        /* Publications */
+        .publications-list {
+            margin-top: 2.5rem;
+        }
+
+        .publication-item {
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 2.5rem 0;
+            margin-bottom: 0;
+            transition: all 0.2s ease;
+        }
+
+        .publication-item:first-child {
+            padding-top: 0;
+        }
+
+        .publication-item:last-child {
+            border-bottom: none;
+        }
+
+        .publication-item:hover {
+            background: var(--bg-secondary);
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .publication-item h3 {
+            color: var(--text-dark);
+            font-size: 1.35rem;
+            margin-bottom: 0.85rem;
+            line-height: 1.5;
+            font-weight: 600;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .publication-item h3:before {
+            content: "📄";
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+            opacity: 0.8;
+        }
+
+        /* Different publication bullet colors by venue tier */
+        .publication-item:has(.venue-badge:contains("Nature")) h3:before {
+            content: "⭐";
+        }
+
+        .publication-item:has(.venue-badge:contains("Quantum")) h3:before {
+            content: "◆";
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        /* Highlight badges with elegant styling */
+        .highlight-meta {
+            display: flex;
+            gap: 0.65rem;
+            flex-wrap: wrap;
+            margin-top: 1.25rem;
+        }
+
+        .highlight-badge {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 0.9rem;
+            font-size: 0.85rem;
+            color: var(--text-medium);
+        }
+
+        /* Impact grid bullets */
+        .impact-item h3 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .publication-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+            margin-bottom: 0.85rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .publication-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .publication-authors {
+            color: var(--text-medium);
+            font-size: 0.975rem;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .publication-note {
+            color: var(--text-medium);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            padding-left: 1.25rem;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .publication-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        .publication-link:hover {
+            color: var(--secondary-color);
+        }
+
+        .venue-badge {
+            background: transparent;
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border: 1px solid var(--primary-color);
+            border-radius: 0;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .complete-publications {
+            margin-top: 4rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid var(--border-subtle);
+            text-align: center;
+        }
+
+        .scholar-link-text {
+            font-size: 1.05rem;
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+
+        .scholar-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .scholar-link:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        /* Research Highlights Section */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .highlight-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 0;
+            transition: all 0.2s ease;
+            overflow: hidden;
+        }
+
+        .highlight-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(26, 54, 93, 0.1);
+        }
+
+        .highlight-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .highlight-content {
+            padding: 2rem;
+        }
+
+        .highlight-card h3 {
+            font-size: 1.35rem;
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .highlight-card p {
+            color: var(--text-medium);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            font-size: 0.975rem;
+        }
+
+        .highlight-meta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .highlight-badge {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            padding: 0.35rem 0.75rem;
+            font-size: 0.85rem;
+            color: var(--text-medium);
+        }
+
+        /* Impact Section */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .impact-item {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            padding: 1.75rem;
+            transition: all 0.2s ease;
+        }
+
+        .impact-item:hover {
+            border-color: var(--primary-color);
+        }
+
+        .impact-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .impact-item h3 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .impact-item p {
+            color: var(--text-medium);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .impact-link {
+            display: inline-block;
+            margin-top: 0.75rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .impact-link:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 0;
+            padding: 3rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 2.5rem;
+        }
+
+        .contact-item {
+            text-align: left;
+        }
+
+        .contact-icon {
+            font-size: 1.75rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            opacity: 0.85;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 0.75rem;
+            color: var(--primary-color);
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .contact-item p {
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+
+        .contact-item a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: flex-start;
+            gap: 1.25rem;
+            margin-top: 2.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--border-color);
+            border-radius: 0;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            padding: 2.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .hero-photo {
+                margin: 0 auto;
+                width: 150px;
+                height: 150px;
+                font-size: 3rem;
+            }
+
+            .hero-text {
+                padding-top: 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.15rem;
+            }
+
+            .hero-highlights {
+                gap: 1.25rem;
+                justify-content: center;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.25rem;
+            }
+
+            .area-title {
+                font-size: 1.65rem;
+            }
+
+            .subtopic {
+                padding-left: 1.25rem;
+            }
+
+            .subtopic h4 {
+                font-size: 1.2rem;
+            }
+
+            .highlights-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 4rem 1.75rem;
+            }
+
+            .nav-container {
+                padding: 0 1.75rem;
+            }
+
+            .hero {
+                padding: 6rem 1.75rem 4rem;
+            }
+
+            .research-area {
+                margin-bottom: 3.5rem;
+                padding-bottom: 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-photo {
+                width: 120px;
+                height: 120px;
+                font-size: 2.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.85rem;
+            }
+
+            .area-title {
+                font-size: 1.5rem;
+            }
+
+            .subtopic {
+                padding-left: 1rem;
+            }
+
+            .representative-pubs a {
+                padding: 0.75rem 1rem;
+            }
+
+            .highlight-item {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Hari Sureshbabu</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#highlights">Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-photo">
+                <!-- Replace this with your actual photo: <img src="path/to/your/photo.jpg" alt="Shree Hari Sureshbabu"> -->
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="hero-text">
+                <h1>Shree Hari Sureshbabu</h1>
+                <p class="subtitle">Senior Applied Research Associate, JPMorgan Chase</p>
+                <p class="tagline">
+                    My research integrates physics, algorithms, and quantum computing across three interconnected areas: 
+                    developing physics-informed machine learning for complex systems, advancing quantum approximate 
+                    optimization algorithms, and investigating quantum machine learning for scientific and secure applications.
+                </p>
+                <div class="hero-highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-brain"></i>
+                        <span>Physics-Informed ML</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>Quantum Optimization</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-atom"></i>
+                        <span>Quantum ML</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-header">
+            <h2>About</h2>
+            <p class="subtitle">Senior Applied Research Associate, JPMorgan Chase</p>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    I am a researcher working at the intersection of physics, machine learning, and quantum computing. 
+                    At JPMorgan Chase's Center for Global Technology Applied Research, I develop algorithmic solutions 
+                    that bridge fundamental scientific principles with practical applications in finance, optimization, 
+                    and computational modeling.
+                </p>
+                
+                <div class="highlight-box">
+                    <h3>Three Research Pillars</h3>
+                    <p style="padding-left: 1.5em;">
+                        <strong>Physics-Informed Algorithms:</strong> Machine learning frameworks that integrate physical 
+                        principles for sensing, vision, and computational modeling. Led ML development for HADAR thermal 
+                        sensing technology (Nature 2023).<br><br>
+                        
+                        <strong>Quantum Approximate Optimization:</strong> Practical quantum algorithms for combinatorial 
+                        problems, with focus on parameter optimization, trainability, and applications to computational finance 
+                        (Quantum Journal 2024, Nature Communications 2024).<br><br>
+                        
+                        <strong>Quantum Machine Learning:</strong> Investigation of quantum approaches to learning, including 
+                        privacy characterization and variational methods for physical systems (npj Quantum Information 2025).
+                    </p>
+                </div>
+
+                <p>
+                    My work combines rigorous theoretical foundations with practical algorithm development. Prior research 
+                    includes quantum machine learning for electronic structure calculations, variational quantum algorithms 
+                    for quantum chemistry, and machine learning applications in photonics. I aim to develop methods that are 
+                    both scientifically rigorous and applicable to real-world problems in industry and scientific computing.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Highlights -->
+    <section id="highlights" style="background: var(--bg-secondary); padding: 5rem 2.5rem;">
+        <div style="max-width: 1100px; margin: 0 auto;">
+            <div class="section-header">
+                <h2>Research Areas</h2>
+                <p class="subtitle">Three interconnected pillars of inquiry</p>
+            </div>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <div class="highlight-image">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <h3>Physics-Informed Algorithms for Complex Systems</h3>
+                        <p>Developing machine learning frameworks that integrate physical principles for sensing, vision, and computational modeling. Key projects include leading ML development for HADAR (Nature 2023) and neural network methods for financial applications.</p>
+                        <div class="highlight-meta">
+                            <span class="highlight-badge">Machine Learning</span>
+                            <span class="highlight-badge">Computer Vision</span>
+                            <span class="highlight-badge">Computational Finance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-image">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <h3>Quantum Approximate Optimization</h3>
+                        <p>Advancing practical quantum algorithms through parameter optimization, trainability analysis, and applications to finance. Developed heuristics enabling QAOA for early fault-tolerant quantum computing (Quantum Journal 2024, first author).</p>
+                        <div class="highlight-meta">
+                            <span class="highlight-badge">QAOA</span>
+                            <span class="highlight-badge">Optimization</span>
+                            <span class="highlight-badge">FTQC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-image">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <h3>Quantum Machine Learning</h3>
+                        <p>Investigating quantum approaches to learning, including privacy characterization (npj Quantum Information 2025) and variational methods for physical systems. Bridging quantum computing with applications in chemistry and materials science.</p>
+                        <div class="highlight-meta">
+                            <span class="highlight-badge">Privacy</span>
+                            <span class="highlight-badge">VQE</span>
+                            <span class="highlight-badge">Quantum Chemistry</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact & Recognition -->
+    <section id="impact">
+        <div class="section-header">
+            <h2>Impact & Recognition</h2>
+            <p class="subtitle">Research visibility and scholarly influence</p>
+        </div>
+        <div class="impact-grid">
+            <div class="impact-item">
+                <div class="impact-icon"><i class="fas fa-quote-right"></i></div>
+                <h3>High-Impact Publications</h3>
+                <p>Published in premier venues including Nature, Nature Communications, npj Quantum Information, and Quantum Journal.</p>
+            </div>
+
+            <div class="impact-item">
+                <div class="impact-icon"><i class="fas fa-podcast"></i></div>
+                <h3>Media Coverage</h3>
+                <p>HADAR work featured in Nature Podcast and Nature News & Views, highlighting significance for autonomous systems and Industry 4.0.</p>
+            </div>
+
+            <div class="impact-item">
+                <div class="impact-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Research Influence</h3>
+                <p>Work cited by researchers worldwide advancing quantum algorithms, machine learning for sensing, and computational methods.</p>
+                <a href="https://scholar.google.com/citations?user=pfU4wXEAAAAJ&hl=en" target="_blank" class="impact-link">
+                    View citations →
+                </a>
+            </div>
+
+            <div class="impact-item">
+                <div class="impact-icon"><i class="fas fa-users"></i></div>
+                <h3>Collaborative Research</h3>
+                <p>Collaborations across JPMorgan Chase GTAR, academia, and industry partners on cutting-edge problems in quantum computing and AI.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Research Expertise -->
+    <section id="skills">
+        <div class="section-header">
+            <h2>Research Expertise</h2>
+            <p class="subtitle">Detailed research contributions and publications</p>
+        </div>
+        
+        <div class="research-areas">
+            <!-- Area 1: Physics-Informed Algorithms -->
+            <div class="research-area">
+                <h3 class="area-title">Physics-Informed Algorithms for Complex System Modeling</h3>
+                <p class="area-description">
+                    Development of machine learning frameworks that integrate physical principles and domain knowledge 
+                    for applications in sensing, computer vision, and computational finance. Focus on creating algorithms 
+                    that leverage underlying physics to achieve superior performance in complex real-world systems.
+                </p>
+                
+                <div class="subtopics">
+                    <div class="subtopic">
+                        <h4>Heat-Assisted Detection and Ranging (HADAR)</h4>
+                        <p class="subtopic-desc">
+                            Led machine learning framework development for revolutionary thermal sensing technology. 
+                            Developed TeX-Net architecture for inverse decomposition of thermal signals into physical 
+                            attributes (temperature, material, texture), enabling autonomous navigation through darkness 
+                            with day-like visibility. Overcame the longstanding ghosting effect in thermal imaging through 
+                            physics-informed neural network design.
+                        </p>
+                        <div class="representative-pubs">
+                            <a href="https://www.nature.com/articles/s41586-023-06174-6" target="_blank">
+                                Heat-assisted detection and ranging
+                                <span class="pub-venue">Nature, 2023</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subtopic">
+                        <h4>Neural Networks and Monte Carlo Methods</h4>
+                        <p class="subtopic-desc">
+                            Application of neural network architectures and probabilistic Monte Carlo techniques to 
+                            computational problems in finance, optimization, and scientific computing. Development of 
+                            methods for risk modeling, derivative pricing, and complex system simulation.
+                        </p>
+                        <div class="representative-pubs">
+                            <a href="#" class="placeholder-pub">
+                                Ongoing research in neural networks for financial applications
+                                <span class="pub-venue">Current work at JPMorgan Chase</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Area 2: Quantum Approximate Optimization -->
+            <div class="research-area">
+                <h3 class="area-title">Quantum Approximate Optimization</h3>
+                <p class="area-description">
+                    Advancing practical quantum algorithms for combinatorial optimization through parameter setting, 
+                    trainability analysis, and application development. Research focuses on making quantum algorithms 
+                    viable for near-term and early fault-tolerant quantum computers with applications in finance and 
+                    logistics.
+                </p>
+                
+                <div class="subtopics">
+                    <div class="subtopic">
+                        <h4>Parameter Optimization for QAOA</h4>
+                        <p class="subtopic-desc">
+                            Developed heuristic methods for parameter initialization and optimization in weighted 
+                            combinatorial optimization problems. Created techniques that enable practical application 
+                            of QAOA and make it suitable for the early fault-tolerant quantum computing era, significantly 
+                            improving convergence and solution quality.
+                        </p>
+                        <div class="representative-pubs">
+                            <a href="https://quantum-journal.org/papers/q-2024-01-18-1231/" target="_blank">
+                                Parameter Setting in Quantum Approximate Optimization of Weighted Problems
+                                <span class="pub-venue">Quantum, 2024</span>
+                            </a>
+                            <a href="https://arxiv.org/pdf/2408.09538" target="_blank">
+                                Parameter setting heuristics for early fault-tolerant era
+                                <span class="pub-venue">arXiv, 2025</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subtopic">
+                        <h4>Trainability and Optimization Landscapes</h4>
+                        <p class="subtopic-desc">
+                            Characterization of trainability challenges in variational quantum algorithms, including 
+                            analysis of barren plateaus using representation theory. Development of iterative optimization 
+                            schedules and improved convergence strategies for practical quantum algorithm deployment.
+                        </p>
+                        <div class="representative-pubs">
+                            <a href="https://www.nature.com/articles/s41467-024-49910-w" target="_blank">
+                                Characterizing barren plateaus with the adjoint representation
+                                <span class="pub-venue">Nature Communications, 2024</span>
+                            </a>
+                            <a href="https://arxiv.org/pdf/2504.01694" target="_blank">
+                                Iterative Interpolation Schedules for QAOA
+                                <span class="pub-venue">arXiv, 2025</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subtopic">
+                        <h4>Quantum Algorithms for Computational Finance</h4>
+                        <p class="subtopic-desc">
+                            Application of quantum optimization and amplitude estimation techniques to financial problems, 
+                            particularly derivative pricing. Development of quantum algorithms using Karhunen-Loève 
+                            expansions for options pricing and risk analysis at scale.
+                        </p>
+                        <div class="representative-pubs">
+                            <a href="https://arxiv.org/pdf/2402.10132" target="_blank">
+                                Quantum option pricing via the Karhunen-Loève expansion
+                                <span class="pub-venue">arXiv, 2024</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Area 3: Quantum Machine Learning -->
+            <div class="research-area">
+                <h3 class="area-title">Quantum Machine Learning</h3>
+                <p class="area-description">
+                    Investigation of quantum approaches to machine learning, focusing on privacy characterization, 
+                    security implications, and applications to physical systems. Research bridges quantum information 
+                    theory with practical learning algorithms for chemistry, materials science, and secure computation.
+                </p>
+                
+                <div class="subtopics">
+                    <div class="subtopic">
+                        <h4>Privacy and Security in Quantum Machine Learning</h4>
+                        <p class="subtopic-desc">
+                            Characterization of fundamental privacy properties in quantum machine learning models. 
+                            Analysis of the interplay between quantum mechanics and information-theoretic privacy measures 
+                            to understand how quantum systems provide inherent privacy guarantees in learning tasks, with 
+                            implications for secure quantum computation.
+                        </p>
+                        <div class="representative-pubs">
+                            <a href="https://www.nature.com/articles/s41534-025-01022-z" target="_blank">
+                                Characterizing privacy in quantum machine learning
+                                <span class="pub-venue">npj Quantum Information, 2025</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subtopic">
+                        <h4>Variational Quantum Algorithms for Physical Systems</h4>
+                        <p class="subtopic-desc">
+                            Development of variational quantum algorithms and quantum machine learning approaches for 
+                            quantum chemistry, electronic structure calculations, and many-body physics. Prior work 
+                            includes applications to eigenstate filtration in two-dimensional materials, machine learning 
+                            for photonics, and novel quantum state representations.
+                        </p>
+                        <div class="representative-pubs">
+                            <a href="#" class="placeholder-pub">
+                                Quantum ML for electronic structure and materials science
+                                <span class="pub-venue">Prior doctoral research</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications">
+        <div class="section-header">
+            <h2>Selected Publications</h2>
+            <p class="subtitle">Key contributions in top-tier venues</p>
+        </div>
+        <div class="publications-list">
+            
+            <div class="publication-item">
+                <h3>Heat-assisted detection and ranging</h3>
+                <div class="publication-meta">
+                    <span><i class="fas fa-calendar"></i> 2023</span>
+                    <span class="venue-badge">Nature</span>
+                </div>
+                <div class="publication-authors">
+                    Fanglin Bao, Xueji Wang, <strong>Shree Hari Sureshbabu</strong>, Gautam Sreekumar, Liping Yang, 
+                    Vaneet Aggarwal, Vishnu N. Boddeti, Zubin Jacob
+                </div>
+                <p class="publication-note">Led development of machine learning framework for revolutionary thermal sensing technology. 
+                Featured in Nature Podcast and News & Views.</p>
+                <a href="https://www.nature.com/articles/s41586-023-06174-6" class="publication-link" target="_blank">
+                    View Publication <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+
+            <div class="publication-item">
+                <h3>Characterizing privacy in quantum machine learning</h3>
+                <div class="publication-meta">
+                    <span><i class="fas fa-calendar"></i> 2025</span>
+                    <span class="venue-badge">npj Quantum Information</span>
+                </div>
+                <div class="publication-authors">
+                    Jamie Heredge, Niraj Kumar, Dylan Herman, Shouvanik Chakrabarti, Romina Yalovetzky, 
+                    <strong>Shree Hari Sureshbabu</strong>, Changhao Li, Marco Pistoia
+                </div>
+                <a href="https://www.nature.com/articles/s41534-025-01022-z" class="publication-link" target="_blank">
+                    View Publication <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+
+            <div class="publication-item">
+                <h3>Characterizing barren plateaus in quantum ansätze with the adjoint representation</h3>
+                <div class="publication-meta">
+                    <span><i class="fas fa-calendar"></i> 2024</span>
+                    <span class="venue-badge">Nature Communications</span>
+                </div>
+                <div class="publication-authors">
+                    Enrico Fontana, Dylan Herman, Shouvanik Chakrabarti, Niraj Kumar, Romina Yalovetzky, 
+                    Jamie Heredge, <strong>Shree Hari Sureshbabu</strong>, Marco Pistoia
+                </div>
+                <a href="https://www.nature.com/articles/s41467-024-49910-w" class="publication-link" target="_blank">
+                    View Publication <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+
+            <div class="publication-item">
+                <h3>Parameter Setting in Quantum Approximate Optimization of Weighted Problems</h3>
+                <div class="publication-meta">
+                    <span><i class="fas fa-calendar"></i> 2024</span>
+                    <span class="venue-badge">Quantum</span>
+                </div>
+                <div class="publication-authors">
+                    <strong>Shree Hari Sureshbabu</strong>, Dylan Herman, Ruslan Shaydulin, Joao Basso, 
+                    Shouvanik Chakrabarti, Yue Sun, Marco Pistoia
+                </div>
+                <a href="https://quantum-journal.org/papers/q-2024-01-18-1231/" class="publication-link" target="_blank">
+                    View Publication <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+
+            <div class="publication-item">
+                <h3>Quantum option pricing via the Karhunen-Loève expansion</h3>
+                <div class="publication-meta">
+                    <span><i class="fas fa-calendar"></i> 2024</span>
+                    <span class="venue-badge">arXiv</span>
+                </div>
+                <div class="publication-authors">
+                    Anupam Prakash, Yue Sun, Shouvanik Chakrabarti, Charlie Che, Aditi Dandapani, Dylan Herman, 
+                    Niraj Kumar, <strong>Shree Hari Sureshbabu</strong>, Ben Wood, Iordanis Kerenidis, Marco Pistoia
+                </div>
+                <a href="https://arxiv.org/pdf/2402.10132" class="publication-link" target="_blank">
+                    View Publication <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+
+        </div>
+        
+        <div class="complete-publications">
+            <p class="scholar-link-text">For a complete list of publications, please visit my 
+                <a href="https://scholar.google.com/citations?user=pfU4wXEAAAAJ&hl=en" target="_blank" class="scholar-link">
+                    Google Scholar profile <i class="fas fa-external-link-alt"></i>
+                </a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-section">
+            <div class="section-header">
+                <h2>Contact</h2>
+                <p class="subtitle">For research collaborations and inquiries</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <h3>Email</h3>
+                    <a href="/cdn-cgi/l/email-protection#85f6edf7e0e0ede4f7ecabf6f0f7e0f6ede7e4e7f0c5eff5e8e6ede4f6e0abe6eae8"><span class="__cf_email__" data-cfemail="4f3c273d2a2a272e3d26613c3a3d2a3c272d2e2d3a0f253f222c272e3c2a612c2022">[email&#160;protected]</span></a>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-building"></i></div>
+                    <h3>Affiliation</h3>
+                    <p>Global Technology Applied Research<br>JPMorgan Chase</p>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/shree-hari-sureshbabu" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/shreehari117" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" title="Google Scholar">
+                    <i class="fas fa-graduation-cap"></i>
+                </a>
+                <a href="https://arxiv.org/search/?searchtype=author&query=Sureshbabu%2C+S+H" target="_blank" title="arXiv">
+                    <i class="fas fa-file-alt"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Shree Hari Sureshbabu</p>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add active state to navigation on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav
