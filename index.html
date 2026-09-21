@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shree Hari Sureshbabu: computational researcher working on algorithms for hard optimization, physics-informed machine learning, and quantum information. Applied Research Lead at JPMorgan Chase.">
+    <meta name="keywords" content="computational physics, computational materials, DFT+U, machine learning interatomic potentials, NEGF, altermagnets, optimization, optimal transport, GPU computing, QAOA, quantum algorithms, AI for science">
+    <title>Shree Hari Sureshbabu | Computational physics, algorithms, materials</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2c5282;
+            --accent-color: #5a67d8;
+            --text-dark: #1a202c;
+            --text-medium: #4a5568;
+            --text-light: #718096;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7fafc;
+            --border-color: #e2e8f0;
+            --border-subtle: #edf2f7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--bg-primary);
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-subtle);
+            z-index: 1000;
+            padding: 1.25rem 0;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-medium);
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+            letter-spacing: 0.01em;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            background: var(--bg-primary);
+            padding: 8rem 2.5rem 6rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .hero-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            /* display: flex;
+            align-items: center; */
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            border: 4px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(26, 54, 93, 0.15);
+            overflow: hidden;
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-text {
+            padding-top: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            line-height: 1.15;
+            color: var(--primary-color);
+            letter-spacing: -0.03em;
+        }
+
+        .hero .subtitle {
+            font-size: 1.35rem;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            color: var(--text-medium);
+            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero .tagline {
+            font-size: 1.05rem;
+            margin-bottom: 0;
+            color: var(--text-light);
+            line-height: 1.75;
+            max-width: 700px;
+        }
+
+        .hero-highlights {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            color: var(--text-medium);
+            font-size: 0.95rem;
+        }
+
+        .highlight-item i {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+        }
+
+        .cta-buttons {
+            display: none;
+        }
+
+        /* Stats Bar - Hidden for academic elegance */
+        .stats-bar {
+            display: none;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.75rem;
+            margin-bottom: 1.25rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .section-header .subtitle {
+            color: var(--text-light);
+            font-size: 1.15rem;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        .about-text {
+            font-size: 1.075rem;
+            line-height: 1.85;
+            color: var(--text-dark);
+            font-weight: 400;
+        }
+
+        .about-text p {
+            margin-bottom: 1.75rem;
+        }
+
+        .highlight-box {
+            background: var(--bg-secondary);
+            border-left: 3px solid var(--primary-color);
+            padding: 2rem 2.25rem;
+            margin: 2.5rem 0;
+            border-radius: 0;
+        }
+
+        .highlight-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .highlight-box p {
+            line-height: 1.8;
+            color: var(--text-medium);
+        }
+
+        /* Elegant bullets for About section */
+        .highlight-box p strong::before {
+            content: "◆";
+            color: var(--primary-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1.5em;
+            margin-left: -1.5em;
+            font-size: 0.8em;
+            vertical-align: middle;
+        }
+
+        /* Research Areas Section */
+        .research-areas {
+            margin-top: 2.5rem;
+        }
+
+        .research-area {
+            margin-bottom: 5rem;
+            padding-bottom: 4rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .research-area:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .area-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1.25rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .area-description {
+            font-size: 1.075rem;
+            line-height: 1.85;
+            color: var(--text-medium);
+            margin-bottom: 2.5rem;
+            max-width: 900px;
+        }
+
+        .subtopics {
+            display: grid;
+            gap: 2.5rem;
+        }
+
+        .subtopic {
+            padding-left: 2rem;
+            border-left: 2px solid var(--border-color);
+            transition: border-color 0.2s ease;
+        }
+
+        .subtopic:hover {
+            border-left-color: var(--primary-color);
+        }
+
+        .subtopic h4 {
+            font-size: 1.35rem;
+            color: var(--text-dark);
+            margin-bottom: 0.85rem;
+            font-weight: 600;
+            font-family: 'Crimson Pro', serif;
+        }
+
+        .subtopic-desc {
+            font-size: 1rem;
+            line-height: 1.75;
+            color: var(--text-medium);
+            margin-bottom: 1.25rem;
+        }
+
+        .representative-pubs {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .representative-pubs a {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            padding: 0.85rem 1.25rem;
+            background: var(--bg-secondary);
+            border-left: 3px solid transparent;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: all 0.2s ease;
+            font-size: 0.975rem;
+            line-height: 1.5;
+        }
+
+        .representative-pubs a:hover {
+            border-left-color: var(--primary-color);
+            background: var(--bg-primary);
+            color: var(--primary-color);
+        }
+
+        .representative-pubs a.placeholder-pub {
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        .pub-venue {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .representative-pubs a:hover .pub-venue {
+            color: var(--secondary-color);
+        }
+
+        /* Research Focus */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .research-card {
+            background: var(--bg-secondary);
+            color: var(--text-dark);
+            padding: 2.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0;
+            transition: transform 0.2s ease;
+        }
+
+        .research-card:hover {
+            border-color: var(--primary-color);
+        }
+
+        .research-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .research-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .research-card li {
+            padding: 0.65rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+
+        .research-card li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Section-specific elegant bullets */
+        
+        /* Physics-Informed Algorithms - Brain/Circuit bullets */
+        .research-area:nth-child(1) .subtopic li:before {
+            content: "⚡";
+            color: #2563eb;
+            font-size: 1.1em;
+        }
+
+        /* Quantum Optimization - Geometric bullets */
+        .research-area:nth-child(2) .subtopic li:before {
+            content: "◈";
+            color: #7c3aed;
+            font-size: 1em;
+        }
+
+        /* Quantum ML - Atom bullets */
+        .research-area:nth-child(3) .subtopic li:before {
+            content: "⬡";
+            color: #0891b2;
+            font-size: 1em;
+        }
+
+        /* Research area subtopics with list formatting */
+        .subtopic ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1rem;
+        }
+
+        .subtopic li {
+            padding: 0.5rem 0;
+            padding-left: 1.75rem;
+            position: relative;
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+
+        /* Publications */
+        .publications-list {
+            margin-top: 2.5rem;
+        }
+
+        .publication-item {
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 2.5rem 0;
+            margin-bottom: 0;
+            transition: all 0.2s ease;
+        }
+
+        .publication-item:first-child {
+            padding-top: 0;
+        }
+
+        .publication-item:last-child {
+            border-bottom: none;
+        }
+
+        .publication-item:hover {
+            background: var(--bg-secondary);
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .publication-item h3 {
+            color: var(--text-dark);
+            font-size: 1.35rem;
+            margin-bottom: 0.85rem;
+            line-height: 1.5;
+            font-weight: 600;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .publication-item h3:before {
+            content: "📄";
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+            opacity: 0.8;
+        }
+
+        /* Different publication bullet colors by venue tier */
+        .publication-item:has(.venue-badge:contains("Nature")) h3:before {
+            content: "⭐";
+        }
+
+        .publication-item:has(.venue-badge:contains("Quantum")) h3:before {
+            content: "◆";
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        /* Highlight badges with elegant styling */
+        .highlight-meta {
+            display: flex;
+            gap: 0.65rem;
+            flex-wrap: wrap;
+            margin-top: 1.25rem;
+        }
+
+        .highlight-badge {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 0.9rem;
+            font-size: 0.85rem;
+            color: var(--text-medium);
+        }
+
+        /* Impact grid bullets */
+        .impact-item h3 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .publication-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+            margin-bottom: 0.85rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .publication-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .publication-authors {
+            color: var(--text-medium);
+            font-size: 0.975rem;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .publication-note {
+            color: var(--text-medium);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            padding-left: 1.25rem;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .publication-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        .publication-link:hover {
+            color: var(--secondary-color);
+        }
+
+        .venue-badge {
+            background: transparent;
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border: 1px solid var(--primary-color);
+            border-radius: 0;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .complete-publications {
+            margin-top: 4rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid var(--border-subtle);
+            text-align: center;
+        }
+
+        .scholar-link-text {
+            font-size: 1.05rem;
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+
+        .scholar-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .scholar-link:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        /* Research Highlights Section */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .highlight-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 0;
+            transition: all 0.2s ease;
+            overflow: hidden;
+        }
+
+        .highlight-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(26, 54, 93, 0.1);
+        }
+
+        .highlight-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .highlight-content {
+            padding: 2rem;
+        }
+
+        .highlight-card h3 {
+            font-size: 1.35rem;
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .highlight-card p {
+            color: var(--text-medium);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            font-size: 0.975rem;
+        }
+
+        .highlight-meta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .highlight-badge {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            padding: 0.35rem 0.75rem;
+            font-size: 0.85rem;
+            color: var(--text-medium);
+        }
+
+        /* Impact Section */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .impact-item {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            padding: 1.75rem;
+            transition: all 0.2s ease;
+        }
+
+        .impact-item:hover {
+            border-color: var(--primary-color);
+        }
+
+        .impact-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .impact-item h3 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .impact-item p {
+            color: var(--text-medium);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .impact-link {
+            display: inline-block;
+            margin-top: 0.75rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .impact-link:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 0;
+            padding: 3rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 2.5rem;
+        }
+
+        .contact-item {
+            text-align: left;
+        }
+
+        .contact-icon {
+            font-size: 1.75rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            opacity: 0.85;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 0.75rem;
+            color: var(--primary-color);
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .contact-item p {
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+
+        .contact-item a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: flex-start;
+            gap: 1.25rem;
+            margin-top: 2.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--border-color);
+            border-radius: 0;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            padding: 2.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .hero-photo {
+                margin: 0 auto;
+                width: 150px;
+                height: 150px;
+                font-size: 3rem;
+            }
+
+            .hero-text {
+                padding-top: 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.15rem;
+            }
+
+            .hero-highlights {
+                gap: 1.25rem;
+                justify-content: center;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.25rem;
+            }
+
+            .area-title {
+                font-size: 1.65rem;
+            }
+
+            .subtopic {
+                padding-left: 1.25rem;
+            }
+
+            .subtopic h4 {
+                font-size: 1.2rem;
+            }
+
+            .highlights-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 4rem 1.75rem;
+            }
+
+            .nav-container {
+                padding: 0 1.75rem;
+            }
+
+            .hero {
+                padding: 6rem 1.75rem 4rem;
+            }
+
+            .research-area {
+                margin-bottom: 3.5rem;
+                padding-bottom: 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-photo {
+                width: 120px;
+                height: 120px;
+                font-size: 2.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.85rem;
+            }
+
+            .area-title {
+                font-size: 1.5rem;
+            }
+
+            .subtopic {
+                padding-left: 1rem;
+            }
+
+            .representative-pubs a {
+                padding: 0.75rem 1rem;
+            }
+
+            .highlight-item {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Current work */
+        .work-list {
+            display: grid;
+            gap: 3.5rem;
+        }
+
+        .work-item {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 15rem;
+            gap: 3rem;
+            padding-bottom: 3.5rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .work-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .work-item h3 {
+            font-size: 1.85rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .work-item h3 a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .work-item h3 a:hover,
+        .work-item h3 a:focus-visible {
+            text-decoration: underline;
+            text-underline-offset: 5px;
+            text-decoration-thickness: 1px;
+        }
+
+        .work-summary {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: var(--text-medium);
+            margin-bottom: 1.25rem;
+            max-width: 62ch;
+        }
+
+        .work-numbers {
+            list-style: none;
+            border-left: 3px solid var(--primary-color);
+            padding-left: 1.25rem;
+            align-self: start;
+        }
+
+        .work-numbers li {
+            margin-bottom: 1.25rem;
+        }
+
+        .work-numbers li:last-child {
+            margin-bottom: 0;
+        }
+
+        .work-numbers strong {
+            display: block;
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 1.65rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            line-height: 1.2;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .work-numbers span {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.45;
+        }
+
+        .work-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-thickness: 1px;
+        }
+
+        .work-link:hover {
+            color: var(--accent-color);
+        }
+
+        .work-next {
+            margin-top: 3.5rem;
+            padding: 1.25rem 1.5rem;
+            background: var(--bg-secondary);
+            border-left: 3px solid var(--border-color);
+            color: var(--text-medium);
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-links a {
+            white-space: nowrap;
+        }
+
+        @media (max-width: 560px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+            .nav-links {
+                gap: 0.9rem;
+            }
+            .nav-links a {
+                font-size: 0.8rem;
+            }
+            .nav-links li:nth-child(4) {
+                display: none;
+            }
+        }
+
+        a:focus-visible {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 768px) {
+            .work-item {
+                grid-template-columns: 1fr;
+                gap: 1.75rem;
+            }
+            .work-item h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">SHS</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#highlights">Research</a></li>
+                <li><a href="#personal">Personal independent work</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-photo">
+                <img src="img/Profile_shs.PNG" alt="">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="hero-text">
+                <h1>Shree Hari Sureshbabu</h1>
+                <p class="subtitle">Applied Research Lead at JPMorgan Chase.</p>
+                <p class="tagline">
+                    I like to work on computational methods where the physics tells you which answers to trust.
+                    At JPMorgan Chase, I work on algorithms for hard optimization problems, from quantum
+                    approximate optimization to optimal transport. Independently, I'm also interested in
+                    posing similar questions but in condensed matter settings. Specifically, identifying where DFT training labels quietly depend
+                    on a fitted parameter in ML models for materials, and what symmetry alone decides about a spin-transport readout.
+                </p>
+                <div class="hero-highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-atom"></i>
+                        <span>Computational physics</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>Optimization algorithms</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-brain"></i>
+                        <span>Physics-informed ML</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- About Section -->
+    <section id="about">
+        <div class="section-header">
+            <h2>About</h2>
+            <p class="subtitle">Physics as a lens on computational methods</p>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    I'm a computational researcher. My PhD in Electrical and Computer Engineering at Purdue, with
+                    Sabre Kais and Zubin Jacob, sat between developing numerical methods for quantum information, electronic structure and photonics.
+                    During my Ph.D., I also developed the ML side of HADAR, a thermal-imaging method that was published as a
+                    Nature cover article.
+                </p>
+                <p>
+                    At JPMorgan Chase's Global Technology Applied Research center, I work on quantum and classical numerical methods at scale, from quantum optimization to optimal transport
+                    solvers for exotic derivative pricing, and methods that has to survive production.
+                </p>
+
+                <div class="highlight-box">
+                    <h3>What I work on</h3>
+                    <p style="padding-left: 1.5em;">
+                        <strong>Computational materials and physics-informed ML.</strong> When a DFT label can be
+                        trusted, what symmetry fixes in a transport calculation, and ML models that carry the physics
+                        rather than fit around it (HADAR, Nature 2023).<br><br>
+
+                        <strong>Algorithms for hard optimization.</strong> Parameter setting and trainability for QAOA
+                        (Quantum 2024, Nature Communications 2024), and solvers for large
+                        martingale optimal transport problems.<br><br>
+
+                        <strong>Quantum information and learning.</strong> Variational methods for physical systems.
+                    </p>
+                </div>
+
+                <p>
+                    The thread through all of it is the same question, wherein I'd like to understand what structure does a problem have, which
+                    quantities can a method be trusted to get right, and where will it fail without telling you?
+                    That question gets sharper in AI for science, where the data a model learns from is itself the
+                    output of an approximate calculation.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Work -->
+
+
+    <!-- Research Highlights -->
+    <section id="highlights" style="background: var(--bg-secondary); padding: 5rem 2.5rem;">
+        <div style="max-width: 1100px; margin: 0 auto;">
+            <div class="section-header">
+                <h2>Research Areas</h2>
+                <p class="subtitle">Three connected threads</p>
+            </div>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <div class="highlight-image">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <h3>Computational Materials and Physics-Informed ML</h3>
+                        <p>Auditing where DFT+U training labels depend on a fitted parameter, symmetry-controlled readout in altermagnetic junctions, and physics-informed inverse models for thermal sensing (HADAR, Nature 2023).</p>
+                        <div class="highlight-meta">
+                            <span class="highlight-badge">DFT+U</span>
+                            <span class="highlight-badge">NEGF</span>
+                            <span class="highlight-badge">ML potentials</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-image">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <h3>Algorithms for Hard Optimization</h3>
+                        <p>Parameter-setting heuristics for QAOA, trainability through representation theory, and solvers for optimal transport.</p>
+                        <div class="highlight-meta">
+                            <span class="highlight-badge">QAOA</span>
+                            <span class="highlight-badge">Optimal transport</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-image">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="highlight-content">
+                        <h3>Quantum Information and Learning</h3>
+                        <p>Variational algorithms for electronic structure and quantum approaches to derivative pricing.</p>
+                        <div class="highlight-meta">
+                            <span class="highlight-badge">NQS</span>
+                            <span class="highlight-badge">VQE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Research Expertise -->
+    <section id="skills">
+        <div class="section-header">
+            <h2>Research Expertise</h2>
+            <p class="subtitle">Detailed research contributions and publications</p>
+        </div>
+        
+        <div class="research-areas">
+            <!-- Area 1: Computational materials and physics-informed ML -->
+            <div class="research-area">
+                <h3 class="area-title">Computational Materials and Physics-Informed ML</h3>
+                <p class="area-description">
+                    Machine learning for materials is only as good as the calculations that label it. This work asks
+                    where those labels can be trusted, uses symmetry to separate real effects from artefacts of a
+                    model, and builds ML that carries physical structure instead of fitting around it.
+                </p>
+
+                <div class="subtopics">
+                    <div class="subtopic">
+                        <h4>Label fragility in DFT magnetic moments</h4>
+                        <p class="subtopic-desc">
+                            Stratified about 26,000 Materials Project structures by theory-chosen features, held
+                            out whole physics regions, and ran DFT+U scans in Quantum ESPRESSO to measure how far
+                            recorded moments move with U. The failure regions of a finetuned M3GNet and a zero-shot
+                            CHGNet line up with ions whose ligand field competes with Hund's coupling at their actual
+                            charge state. Then opened CHGNet up with linear probes and activation ablations to ask
+                            whether it represents its own error, and which of those representations the network actually
+                            computes rather than reads off the chemical formula.
+                        </p>
+                        <div class="representative-pubs">
+                            <a href="projects/magnetic-labels.html">
+                                Physics-stratified training data for magnetic property prediction
+                                <span class="pub-venue">Report, 2026</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subtopic">
+                        <h4>Symmetry-controlled readout in altermagnetic junctions</h4>
+                        <p class="subtopic-desc">
+                            NEGF transport through a resonant level coupled to two d-wave altermagnetic electrodes.
+                            Texture orientation sets the sign of the magnetic readout, and a reflection symmetry forces
+                            it to vanish at 45°, checked against a matched ferromagnetic control.
+                        </p>
+                        <div class="representative-pubs">
+                            <a href="projects/altermagnet-junction.html">
+                                Orientation-dependent readout in a model altermagnetic junction
+                                <span class="pub-venue">Report, 2026</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subtopic">
+                        <h4>Heat-Assisted Detection and Ranging (HADAR)</h4>
+                        <p class="subtopic-desc">
+                            Led the machine-learning framework for HADAR. Built TeX-Net, which inverts thermal signals
+                            into temperature, emissivity and texture, removing the ghosting that has long limited
+                            thermal imaging and giving day-like vision in darkness.
+                        </p>
+                        <div class="representative-pubs">
+                            <a href="https://www.nature.com/articles/s41586-023-06174-6" target="_blank" rel="noopener">
+                                Heat-assisted detection and ranging
+                                <span class="pub-venue">Nature, 2023</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Area 2: Algorithms for hard optimization -->
+            <div class="research-area">
+                <h3 class="area-title">Algorithms for Hard Optimization</h3>
+                <p class="area-description">
+                    Practical algorithms for optimization problems that are expensive to solve well, quantum and
+                    classical. The emphasis is on what makes a method trainable and scalable in practice, not just
+                    in principle.
+                </p>
+
+                <div class="subtopics">
+                    <div class="subtopic">
+                        <h4>Parameter Setting for QAOA</h4>
+                        <p class="subtopic-desc">
+                            Heuristics for initializing and transferring QAOA parameters on weighted combinatorial
+                            problems, cutting the optimization overhead that otherwise dominates, and extending them to
+                            the early fault-tolerant regime.
+                        </p>
+                        <div class="representative-pubs">
+                            <a href="https://quantum-journal.org/papers/q-2024-01-18-1231/" target="_blank" rel="noopener">
+                                Parameter Setting in Quantum Approximate Optimization of Weighted Problems
+                                <span class="pub-venue">Quantum, 2024</span>
+                            </a>
+                            <a href="https://arxiv.org/pdf/2408.09538" target="_blank" rel="noopener">
+                                Parameter setting heuristics for early fault-tolerant era
+                                <span class="pub-venue">arXiv, 2025</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subtopic">
+                        <h4>Trainability and Optimization Landscapes</h4>
+                        <p class="subtopic-desc">
+                            Barren plateaus in variational circuits characterized through the adjoint representation of
+                            the circuit's dynamical Lie algebra, and interpolation schedules that carry QAOA parameters
+                            across depths.
+                        </p>
+                        <div class="representative-pubs">
+                            <a href="https://www.nature.com/articles/s41467-024-49910-w" target="_blank" rel="noopener">
+                                Characterizing barren plateaus with the adjoint representation
+                                <span class="pub-venue">Nature Communications, 2024</span>
+                            </a>
+                            <a href="https://doi.org/10.1145/3815778" target="_blank" rel="noopener">
+                                Iterative Interpolation Schedules for QAOA
+                                <span class="pub-venue">ACM Trans. Quantum Computing, 2026</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subtopic">
+                        <h4>Optimal Transport for Exotic Derivatives</h4>
+                        <p class="subtopic-desc">
+                            Model-independent pricing of path-dependent products using optimal transport.
+                        </p>
+                        <div class="representative-pubs">
+                            <a href="#" class="placeholder-pub">
+                                Understanding the practicality of optimal transport at scale
+                                <span class="pub-venue">Current work at JPMorgan Chase</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- Area 3: Quantum information and learning -->
+            <div class="research-area">
+                <h3 class="area-title">Quantum Information and Learning</h3>
+                <p class="area-description">
+                    What quantum models can learn, what they leak, and where quantum algorithms plausibly help with
+                    problems in physics and finance.
+                </p>
+
+                <div class="subtopics">
+
+                    <div class="subtopic">
+                        <h4>Variational Quantum Algorithms for Physical Systems</h4>
+                        <p class="subtopic-desc">
+                            Doctoral work on variational quantum algorithms and quantum machine learning for electronic
+                            structure and many-body physics, including eigenstate filtration in two-dimensional
+                            materials, machine learning for photonics, and quantum state representations.
+                        </p>
+                        <div class="representative-pubs">
+                            <a href="https://pubs.acs.org/doi/10.1021/acs.jcim.1c00294" target="_blank" rel="noopener">
+                                Neural Quantum States for electronic structure of periodic systems
+                                <span class="pub-venue">J. Chem. Inf. Model., 2021</span>
+                            </a>
+                            <a href="https://pubs.acs.org/doi/10.1021/jacs.1c06246" target="_blank" rel="noopener">
+                                Quantum ML for eigenstate filtration in 2D materials
+                                <span class="pub-venue">JACS, 2021</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subtopic">
+                        <h4>Quantum Algorithms for Derivative Pricing</h4>
+                        <p class="subtopic-desc">
+                            Option pricing using a Karhunen–Loève expansion of the
+                            underlying process, which reduces the resources needed to load path-dependent payoffs.
+                        </p>
+                        <div class="representative-pubs">
+                            <a href="https://arxiv.org/pdf/2402.10132" target="_blank" rel="noopener">
+                                Quantum option pricing via the Karhunen-Loève expansion
+                                <span class="pub-venue">arXiv, 2024</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- <div class="subtopic">
+                        <h4>Privacy and Security in Quantum Machine Learning</h4>
+                        <p class="subtopic-desc">
+                            Privacy properties of quantum machine learning models, analysed with information-theoretic
+                            measures: how much a trained quantum model reveals about its training data, and what that
+                            implies for secure quantum computation.
+                        </p>
+                        <div class="representative-pubs">
+                            <a href="https://www.nature.com/articles/s41534-025-01022-z" target="_blank" rel="noopener">
+                                Characterizing privacy in quantum machine learning
+                                <span class="pub-venue">npj Quantum Information, 2025</span>
+                            </a>
+                        </div>
+                    </div> -->
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <section id="personal">
+        <div class="section-header">
+            <h2>Personal independent work</h2>
+            <p class="subtitle">Independent studies in computational condensed matter</p>
+        </div>
+
+        <div class="work-list">
+            <article class="work-item">
+                <div>
+                    <h3><a href="projects/magnetic-labels.html">Improving training data for magnetic property prediction</a></h3>
+                    <p class="work-summary">
+                        Materials Project magnetic moments come from DFT+U, with the Hubbard U fitted to reproduce formation energies, not moments. Near a spin-state crossover the moment turns on that choice of U. A different but equally defensible value flips the ion between a high-spin and a low-spin solution, and the database records one of them with no sign that the other exists. I wanted to ask whether models trained on those labels inherit the ambiguity, and whether theory can flag the fragile labels before a single calculation is run. My first hypothesis, d-electron count, was wrong. The one that held is about the ligand field rather than the count. What matters is whether, at an ion's actual charge state, it competes with Hund's coupling. Co³⁺ reaches that regime, Co²⁺ does not, despite sharing d⁷ with Ni³⁺. 
+                    </p>
+                    <p class="work-summary">
+                        Then, trying to keep up with the state of the art interpretability research in large networks, I decided to open the model up to understand whether CHGNet already represents what it gets wrong. It does, though the circuit I first found for it, dissolved under a control I should have run at the start.</p></header>
+
+                    </p>
+                    <div class="highlight-meta">
+                        <span class="highlight-badge">DFT+U in Quantum ESPRESSO</span>
+                        <span class="highlight-badge">M3GNet</span>
+                        <span class="highlight-badge">CHGNet</span>
+                        <span class="highlight-badge">Materials Project</span>
+                        <span class="highlight-badge">Linear probes</span>
+                        <span class="highlight-badge">Activation ablation</span>
+                    </div>
+                    <a class="work-link" href="projects/magnetic-labels.html">Read the report</a>
+                </div>
+                <ul class="work-numbers">
+                    <li><strong>−0.34</strong><span>skill on the worst held-out physics stratum, where a random split reports +0.12 and hides it</span></li>
+                    <li><strong>δ = 0.49</strong><span>Cliff's delta separating Co³⁺ from Co²⁺ errors in CHGNet, across 360 materials</span></li>
+                    <li><strong>66 meV</strong><span>gap between two self-consistent spin states in Li₃CoNi₃O₈, seeded deliberately</span></li>
+                    <li><strong>0.907</strong><span>AUC that element fractions alone reach on the feature I had built a circuit around, and the whole network adds only 0.009</span></li>
+                </ul>
+            </article>
+
+            <article class="work-item">
+                <div>
+                    <h3><a href="projects/altermagnet-junction.html">Orientation-dependent readout in a model altermagnetic junction</a></h3>
+                    <p class="work-summary">
+                        Can the orientation of a momentum-dependent spin splitting decide how a junction reads out its magnetic state? In a minimal NEGF model of a d-wave altermagnetic junction, it does. Rotate one electrode's spin texture by 90° and the readout flips sign. Turn it to 45° and the two magnetic states become electrically indistinguishable. That isn't a tuned coincidence. It follows from a reflection symmetry of the transport channels, which the calculation reproduces to floating-point precision.
+                    </p>
+                    <p class="work-summary">
+                        I got there because an earlier gate-tuned "sweet spot" also showed up in the ferromagnetic
+                        control, so it couldn't be telling me anything about altermagnets.
+                    </p>
+                    <div class="highlight-meta">
+                        <span class="highlight-badge">NEGF transport</span>
+                        <span class="highlight-badge">Symmetry analysis</span>
+                        <span class="highlight-badge">Altermagnetism</span>
+                    </div>
+                    <a class="work-link" href="projects/altermagnet-junction.html">Read the report</a>
+                </div>
+                <ul class="work-numbers">
+                    <li><strong>±1.58%</strong><span>readout contrast at 0° and 90°, same size but opposite sign</span></li>
+                    <li><strong>0 at 45°</strong><span>set by symmetry, zero to numerical precision at every gate energy</span></li>
+                    <li><strong>3 × 10⁻¹¹</strong><span>largest change in contrast under grid refinement</span></li>
+                </ul>
+            </article>
+        </div>
+
+        <!-- <p class="work-next">
+            Next: restricting the U-scan to gapped systems with multi-start SCF so the group comparison actually
+            tests crossover physics, then a physics-informed solver for the self-consistent Schrödinger–Poisson
+            problem at a GaN/AlGaN heterointerface.
+        </p> -->
+    </section>
+
+    <!-- Publications -->
+    <section id="publications">
+        <div class="section-header">
+            <h2>Selected Publications</h2>
+            <!-- <p class="subtitle">First-author and lead contributions</p> -->
+        </div>
+        <div class="publications-list">
+            
+            <div class="publication-item">
+                <h3>Parameter Setting in Quantum Approximate Optimization of Weighted Problems</h3>
+                <div class="publication-meta">
+                    <span><i class="fas fa-calendar"></i> 2024</span>
+                    <span class="venue-badge">Quantum</span>
+                </div>
+                <div class="publication-authors">
+                    <strong>Shree Hari Sureshbabu</strong>, Dylan Herman, Ruslan Shaydulin, Joao Basso, Shouvanik Chakrabarti, Yue Sun, Marco Pistoia
+                </div>
+                <p class="publication-note">Parameter-transfer heuristics that cut the optimization overhead of QAOA on weighted combinatorial problems.</p>
+                <a href="https://quantum-journal.org/papers/q-2024-01-18-1231/" class="publication-link" target="_blank" rel="noopener">
+                    View Publication <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+
+                        <div class="publication-item">
+                <h3>Heat-assisted detection and ranging</h3>
+                <div class="publication-meta">
+                    <span><i class="fas fa-calendar"></i> 2023</span>
+                    <span class="venue-badge">Nature</span>
+                </div>
+                <div class="publication-authors">
+                    Fanglin Bao, Xueji Wang, <strong>Shree Hari Sureshbabu</strong>, Gautam Sreekumar, Liping Yang, Vaneet Aggarwal, Vishnu N. Boddeti, Zubin Jacob
+                </div>
+                <p class="publication-note">Led the machine-learning framework. Nature cover story, featured in Nature Podcast and News &amp; Views.</p>
+                <a href="https://www.nature.com/articles/s41586-023-06174-6" class="publication-link" target="_blank" rel="noopener">
+                    View Publication <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+
+            <div class="publication-item">
+                <h3>Iterative Interpolation Schedules for the Quantum Approximate Optimization Algorithm</h3>
+                <div class="publication-meta">
+                    <span><i class="fas fa-calendar"></i> 2026</span>
+                    <span class="venue-badge">ACM Transactions on Quantum Computing</span>
+                </div>
+                <div class="publication-authors">
+                    Anuj Apte, <strong>Shree Hari Sureshbabu</strong>, Ruslan Shaydulin, Sami Boulebnane, Zichang He, Dylan Herman, James Sud, Marco Pistoia
+                </div>
+                <p class="publication-note">Interpolation schedules that carry QAOA parameters past 1,000 layers.</p>
+                <a href="https://doi.org/10.1145/3815778" class="publication-link" target="_blank" rel="noopener">
+                    View Publication <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+
+            <div class="publication-item">
+                <h3>Implementation of Quantum Machine Learning for Electronic Structure Calculations of Periodic Systems on Quantum Computing Devices</h3>
+                <div class="publication-meta">
+                    <span><i class="fas fa-calendar"></i> 2021</span>
+                    <span class="venue-badge">J. Chem. Inf. Model.</span>
+                </div>
+                <div class="publication-authors">
+                    <strong>Shree Hari Sureshbabu</strong>, Manas Sajjan, Sangchul Oh, Sabre Kais
+                </div>
+                <p class="publication-note">Hybrid quantum machine learning for the band structures of hexagonal boron nitride and graphene on IBM-Q.</p>
+                <a href="https://pubs.acs.org/doi/10.1021/acs.jcim.1c00294" class="publication-link" target="_blank" rel="noopener">
+                    View Publication <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+
+            <div class="publication-item">
+                <h3>Quantum Machine-Learning for Eigenstate Filtration in Two-Dimensional Materials</h3>
+                <div class="publication-meta">
+                    <span><i class="fas fa-calendar"></i> 2021</span>
+                    <span class="venue-badge">JACS</span>
+                </div>
+                <div class="publication-authors">
+                    Manas Sajjan, <strong>Shree Hari Sureshbabu</strong>, Sabre Kais
+                </div>
+                <p class="publication-note">Quantum machine-learning method for filtering eigenstates of two-dimensional materials.</p>
+                <a href="https://pubs.acs.org/doi/10.1021/jacs.1c06246" class="publication-link" target="_blank" rel="noopener">
+                    View Publication <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+
+        </div>
+        
+        <div class="complete-publications">
+            <p class="scholar-link-text">For a complete list of publications, please visit my 
+                <a href="https://scholar.google.com/citations?user=pfU4wXEAAAAJ&hl=en" target="_blank" class="scholar-link">
+                    Google Scholar profile <i class="fas fa-external-link-alt"></i>
+                </a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-section">
+            <div class="section-header">
+                <h2>Contact</h2>
+                <p class="subtitle">Happy to talk about research, collaborations, or AI for science</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <h3>Email</h3>
+                    <a href="mailto:shreehari.1106@gmail.com">shreehari.1106@gmail.com</a>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-building"></i></div>
+                    <h3>Affiliation</h3>
+                    <p>Global Technology Applied Research<br>JPMorgan Chase</p>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/shree-hari-sureshbabu" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/shreehari117" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://scholar.google.com/citations?user=pfU4wXEAAAAJ&hl=en" target="_blank" title="Google Scholar">
+                    <i class="fas fa-graduation-cap"></i>
+                </a>
+                <a href="https://arxiv.org/search/?searchtype=author&query=Sureshbabu%2C+S+H" target="_blank" title="arXiv">
+                    <i class="fas fa-file-alt"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Shree Hari Sureshbabu</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add active state to navigation on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+            });
+        });
+    </script>
+</body>
+</html>
